@@ -18,6 +18,21 @@
 \onehalfspacing 
 \usepackage{titlesec}
 \usepackage{fancyhdr}
+\usepackage[titles]{tocloft}
+\usepackage{chngcntr}
+
+\counterwithout{figure}{chapter}
+
+\renewcommand{\cftpartpresnum}{PARTIE~} 
+\renewcommand{\cftpartaftersnum}{.}     
+\renewcommand{\cftpartleader}{\cftdotfill{\cftdotsep}}
+\setlength{\cftpartnumwidth}{5em}
+
+\renewcommand{\cftchappresnum}{Chapitre~}
+\renewcommand{\cftchapaftersnum}{.}     
+\renewcommand{\cftchapleader}{\cftdotfill{\cftdotsep}}
+\setlength{\cftchapnumwidth}{5em}
+
 \pagestyle{fancy}
 \fancyhf{} % Clear all header and footer fields
 \fancyfoot[C]{\thepage} % Place the page number in the center of the footer
@@ -33,18 +48,21 @@
 \renewcommand{\contentsname}{SOMMAIRE GENERAL} 
 \renewcommand{\listtablename}{LISTE DES TABLEAUX}
 \renewcommand{\listfigurename}{LISTE DES FIGURES}
+\newcommand{\figref}[1]{figure \ref{#1}}
+
+\titleformat{\part}[display]
+  {\normalfont\Huge\bfseries\centering}
+  {PARTIE \Roman{part}}{20pt}{\Huge}
 
 \titleformat{\chapter}[display]
-    {\normalfont\large\bfseries\centering}
-    {PARTIE \Roman{chapter}~.}
-   {20pt}
-    {\Large}
+  {\normalfont\Large\bfseries\centering}
+  {Chapitre \arabic{chapter}~.}{20pt}{\Large}
 
 \titleformat{\section}
-    {\normalfont\bfseries} 
+    {\normalfont\large\bfseries} 
     {\thesection}
     {1em}
-    {}
+    {\large}
 	
 \begin{document}	
 			 \pretitle{
@@ -65,7 +83,7 @@
 							\textbf{\underline{Mention:}} Informatique \\	
 							\textbf{\underline{Parcours:}} Informatique générale\\
 							\textbf{\textit{Intitulé}}				\end{center}
-				\begin{center}\large\bfseries
+				\begin{center}\Large\bfseries
 			}
 			\preauthor{\begin{flushleft}\fontsize{12} \lineskip Présenté le 01 février 2023 }
 			\postauthor{\end{flushleft} \textbf{Membres du Jury:} 
@@ -82,13 +100,15 @@
 			\title{
 				\color{blue}
 				\setlength{\fboxsep}{10pt} 
-				\fbox{
-					\begin{minipage}{0.95\textwidth}
-						\begin{center}
-							CONCEPTION ET REALISATION  D'UNE APPLICATION WEB  DE RESERVATION DE VOYAGE
-						\end{center}
-					  \end{minipage}
-				}
+				\begin{center}
+					\fbox{
+						\begin{minipage}{0.95\textwidth}
+							\begin{center}
+								CONCEPTION ET REALISATION  D'UNE APPLICATION WEB  DE RESERVATION DE VOYAGE
+							\end{center}
+						  \end{minipage}
+					}
+				\end{center}
 			}
 			\author{\textbf{Par:} Monsieur ANDRIAMIORA Ainamalala Lucky}
 			\date{2024-2025}
@@ -249,6 +269,79 @@
 
 				\hspace{15pt} Notre plan se subdivise en trois parties: dans un premier temps la présentation de l’École Nationale d'Informatique (ENI) suivie de celle de Nexitia Technology. Dans la deuxième partie, nous aborderons les analyses et la conception du projet. Enfin, la troisième partie portera sur la réalisation du projet avec les différents moyens et outils utilisés.
 			\end{minipage}
-			\newpage
-			\chapter{PRESENTATION}
-\end{document}
+			\part{PRESENTATION}
+			\chapter{Présentation de l’Ecole Nationale d’Informatique}
+			\section{Information d’ordre générale }
+				\hspace{15pt} L’Ecole Nationale d’Informatique, en abrégé ENI, est un établissement d’enseignement supérieur rattaché académiquement et administrativement à l’Université de Fianarantsoa. Le siège de l’Ecole se trouve à Tanambao-Antaninarenina à Fianarantsoa. L’adresse pour la prise de contact avec l’Ecole est la suivante : Ecole Nationale d’Informatique (ENI) Tanambao, Fianarantsoa. Le numéro de sa boîte postale est 1487 avec le code postal 301. Téléphone : 034 05 733 36 ou 032 15 204 28. Son adresse électronique est la suivante : eni@eni.mg. Il dispose également d'un site web : \textbf{www.eni.mg}
+			\section{Missions et historiques}
+				\hspace{15pt} L’ENI se positionne sur l’échiquier socio-éducatif malgache comme étant le plus puissant secteur de diffusion et de vulgarisation des connaissances et des technologies informatiques. 
+
+				Cette Ecole Supérieure peut être considérée aujourd’hui comme la vitrine et la pépinière des élites informaticiennes du pays.
+	
+				L’Ecole s’est constituée de façon progressive au sein du Centre Universitaire Régional (CUR) de Fianarantsoa.
+
+				De façon formelle, l’ENI était constituée et créée au sein du (CUR) par le décret N° 83- 185 du 24 Mai 1983, comme étant le seul établissement Universitaire Professionnalisé au niveau national, destiné à former des techniciens et des Ingénieurs de haut niveau, aptes à répondre aux besoins et exigences d’Informatisation des entreprises, des sociétés et des organes implantés à Madagascar.
+
+				           \begin{center}
+						\begin{minipage}{\textwidth}
+								\hspace{15pt} L’ENI a pour conséquent pour mission de former des spécialistes informaticiens compétents et opérationnels de différents niveaux notamment : 
+				
+								\begin{itemize}
+									\item En fournissant à des étudiants des connaissances de base en informatique ;
+									\item En leur transmettant le savoir-faire requis, à travers la professionnalisation des formations dispensées et en essayant une meilleure adéquation des formations par rapport aux besoins évolutifs des sociétés et des entreprises ;
+									\item En initiant les étudiants aux activités de recherche dans les différents domaines des Technologies de l’information et de la communication (TIC).\\
+								\end{itemize}
+						\end{minipage}
+					\end{center}
+
+				L’implantation de cette Ecole Supérieure de technologie de pointe dans un pays en développement et dans une Province (ou Faritany) à tissu économique et industriel faiblement développé ne l’a pourtant pas défavorisée, ni empêchée de former des spécialistes informaticiens de bon niveau, qui sont recherchés par les entreprises, les sociétés et les organismes publics et privés sur le marché de l’emploi.
+
+				La filière de formation d’Analystes Programmeurs a été mise en place à l’Ecole en 1983, et a été gelée par la suite en 1996, tandis que la filière de formation d’ingénieurs a été ouverte à l’Ecole en 1986.
+				
+				Dans le cadre du Programme de renforcement en l’Enseignement Supérieur (PRESUP), la filière de formation des Techniciens Supérieurs en Maintenance des Systèmes des informatiques a été mise en place en 1986 grâce à l’appui matériel et financier de la Mission Française de coopération auprès de l’Ambassade de France à Madagascar.
+
+				Une formation pour l’obtention de la certification CCNA et / ou NETWORK +. Appelée « CISCO Networking Academy » a été créée à l’Ecole en 2002-2003 grâce au partenariat avec CISCO SYSTEM et l’Ecole Supérieure Polytechnique d’Antananarivo (ESPA). Cependant, cette formation n’avait pas duré longtemps. Une formation de troisième cycle a été ouverte à l’Ecole a été ouverte à l’Ecole depuis l’année 2003 – 2004 grâce à la coopération académique et scientifique entre l’Université de Fianarantsoa pour le compte de l’ENI et l’Université Paul Sabatier de Toulouse (UPST).
+				
+				 \begin{center}
+					 \begin{minipage}{\textwidth}
+	
+						\hspace{15pt} Cette filière avait pour objectif de former certains étudiants à la recherche dans les différents domaines de l’Informatique, et notamment pour préparer la relève des Enseignants-Chercheurs qui étaient en poste. Pendant l’année 2007-2008, la formation en vue de l’obtention du diplôme de Licence Professionnelle en Informatique a été mise en place à l’ENI avec les deux options suivantes de formation :
+						
+						\begin{itemize}
+							\item Génie Logiciel et base de Données.
+							\item Administration des Système et réseaux.\\
+						\end{itemize}
+					\end{minipage}
+
+				\end{center}
+				
+				La mise en place à l’Ecole de ces deux options de formation devait répondre au besoin de basculement vers le système Licence – Master – Doctorat (LMD). Mais la filière de formation des Techniciens Supérieurs en Maintenance des Systèmes Informatiques a été gelée en 2009. 
+En vue de surmonter les difficultés de limitation de l’effectif des étudiants accueillis à l’Ecole, notamment à cause du manque d’infrastructures, un système de « Formation Hybride » a été mise en place à partir de l’année 2010. Il s’agit en effet d’un système de formation semi présentielle et à distance avec l’utilisation de la visioconférence pour la formation à distance. Le système de formation hybride a été ainsi créé à Fianarantsoa ainsi qu’Université de Toliara.
+
+				\section{Organigramme institutionnel}
+
+				\hspace{15pt} Cet organigramme de l’Ecole est inspiré des dispositions du décret N° 83-185 du 23 Mai 1983.
+
+				L’ENI est administrée par un conseil d’Ecole, et dirigée par un directeur nommé par un décret adopté en conseil des Ministres.
+
+				Le Collège des enseignants regroupant tous les enseignants-chercheurs de l’Ecole est chargé de résoudre les problèmes liés à l’organisation pédagogique des enseignements ainsi que à l’élaboration des emplois du temps.
+
+				\begin{center}
+					\begin{minipage}{\textwidth}
+						\hspace{15pt} Le Conseil Scientifique propose les orientations pédagogiques et scientifiques de l’établissement, en tenant compte notamment de l’évolution du marché de travail et de l’adéquation des formations dispensées par rapport aux besoins des entreprises. Trois départements de formation caractérisent l’organigramme :
+						\begin{itemize}
+							\item Le département de formation théorique à l’intérieur de l’Ecole ;
+							\item Le département de formation pratique pour la coordination et la supervision des stages en entreprise et des voyages d’études ;
+							\item Le département de formation doctorale pour l’organisation de la formation de 3ème cycle. La figure \ref{fig:figure 1} présente l’organigramme actuel de l’Ecole.
+						\end{itemize}
+					\end{minipage}
+				\end{center}
+
+				\begin{figure}[h]
+					  \centering
+					  \includegraphics[width=\textwidth]{image4.png}
+					  \caption{Organigramme institutionnel de l'ENI}
+					  \label{fig:figure 1}
+				\end{figure}
+	
+\end{document}	
